@@ -31,7 +31,6 @@ const App = () => {
 
       setClima({
         temp: Math.round(dataClima.main.temp),
-        feels_like: Math.round(dataClima.main.feels_like),
         maxTemp: Math.round(dataClima.main.temp_max),
         minTemp: Math.round(dataClima.main.temp_min),
         city: dataClima.name,
@@ -46,9 +45,19 @@ const App = () => {
   }, [API_KEY, currentLatitude, currentLongitude]);
 
   const handleLoad = useCallback(async () => {
-    await geTemp();
-  }, [geTemp]);
-
+    if (currentLatitude && currentLongitude) {
+      await geTemp();
+    } else {
+      loadLocation();
+    }
+  }, [currentLatitude, currentLongitude, geTemp, loadLocation]);
+  useEffect(() => {
+    (async () => {
+      if (currentLatitude && currentLongitude) {
+        geTemp();
+      }
+    })();
+  }, [currentLatitude, currentLongitude, geTemp]);
   return (
     <>
       <StatusBar barStyle={'dark-content'} />

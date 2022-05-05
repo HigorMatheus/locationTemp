@@ -41,10 +41,10 @@ export const useLocationUser = () => {
           PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
           {
             title: 'Permissão de acesso a localização',
-            buttonNegative: 'nao',
+            buttonNegative: 'Nâo',
             buttonNeutral: 'cancel',
             buttonPositive: 'sim',
-            message: 'test',
+            message: 'para ter o clima da sua cidade',
           },
         );
 
