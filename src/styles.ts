@@ -1,60 +1,30 @@
 import styled from 'styled-components/native';
+import LinearGradient from 'react-native-linear-gradient';
 
-export const Container = styled.View`
+export const Container = styled(LinearGradient).attrs({
+  colors: ['#2F2CBC', '#4BB5F1'],
+  start: {x: 0.6, y: 0},
+  end: {x: 0, y: 0.8},
+})`
   flex: 1;
   background-color: aquamarine;
+  padding: 16px;
 `;
 
 export const Content = styled.View`
+  flex: 1;
   padding: 40px;
-  height: 500px;
+  padding-bottom: 60px;
+  align-items: center;
 `;
 
-export const ClimeContent = styled.View`
-  background-color: blue;
-  width: 243px;
-  height: 406px;
-  padding: 20px;
-  border-radius: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  align-items: center;
-  justify-content: space-around;
-`;
 export const Title = styled.Text`
   text-align: center;
+  font-family: 'Roboto-Bold';
   margin: 10px;
-  font-size: 16px;
-  color: #000;
-`;
-
-export const Temp = styled.Text`
-  font-size: 40px;
+  font-size: 36px;
+  width: 100%;
+  margin-bottom: 16px;
   color: #fff;
-`;
-export const TextDetail = styled.Text`
-  text-align: center;
-  justify-content: center;
-  font-size: 20px;
-  color: #fff;
-`;
-export const TempMaxMin = styled.Text`
-  text-align: center;
-  font-size: 30px;
-  color: #f3f3f3;
-`;
-
-export const Button = styled.TouchableOpacity`
-  margin-top: auto;
-  bottom: 0;
-  margin: 16px;
-  padding: 16px;
-  border-radius: 8px;
-  background-color: aqua;
-  align-items: center;
-  justify-content: center;
-`;
-export const ButtonText = styled.Text`
-  color: #333;
-  font-size: 24px;
+  border-radius: 36px;
 `;
