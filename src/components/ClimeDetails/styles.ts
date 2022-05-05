@@ -54,7 +54,6 @@ export const ClimeContent = styled(LinearGradient).attrs({
   height: 250px;
   padding: 24px;
   border-radius: 32px;
-
   margin-left: auto;
   margin-right: auto;
   align-items: center;
@@ -63,6 +62,7 @@ export const ClimeContent = styled(LinearGradient).attrs({
 export const Title = styled.Text`
   text-align: center;
   margin: 10px;
+  font-size: 'Roboto-Regular';
   font-size: 36px;
   margin-bottom: 16px;
   color: #fff;
@@ -70,19 +70,21 @@ export const Title = styled.Text`
 
 export const Temp = styled.Text`
   font-size: 40px;
+  font-size: 'Roboto-Medium';
   color: #fff;
 `;
 export const TextDetail = styled.Text`
   text-align: center;
   justify-content: center;
   font-size: 20px;
+  font-size: 'Roboto-Medium';
   color: #fff;
 `;
 export const TextInfo = styled.Text`
   text-align: center;
   justify-content: center;
   font-size: 32px;
-  font-family: 'Roboto-Bold';
+  font-family: 'Roboto-Regular';
   color: #fff;
 `;
 export const TempMaxMin = styled.Text`
