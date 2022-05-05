@@ -24,7 +24,9 @@ export const ClimeDetails = ({clima}: ClimeDetailsProps) => {
               uri: `http://openweathermap.org/img/wn/${clima?.weather?.icon}@2x.png`,
             }}
           />
+          <TextDetail>{clima.maxTemp}Cº</TextDetail>
           <Temp>{clima?.temp ? clima?.temp + 'Cº' : '300Cº'}</Temp>
+          <TextDetail>{clima.minTemp}Cº</TextDetail>
         </>
       ) : (
         <Container>

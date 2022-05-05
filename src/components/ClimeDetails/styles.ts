@@ -70,14 +70,14 @@ export const Title = styled.Text`
 
 export const Temp = styled.Text`
   font-size: 40px;
-  font-size: 'Roboto-Medium';
+  font-family: 'Roboto-Medium';
   color: #fff;
 `;
 export const TextDetail = styled.Text`
   text-align: center;
   justify-content: center;
   font-size: 20px;
-  font-size: 'Roboto-Medium';
+  font-family: 'Roboto-Medium';
   color: #fff;
 `;
 export const TextInfo = styled.Text`
