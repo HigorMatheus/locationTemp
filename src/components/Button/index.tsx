@@ -7,7 +7,7 @@ export const Button = ({city, isLoading, ...rest}: ButtonProps) => {
   return (
     <Container {...rest}>
       {isLoading ? (
-        <ActivityIndicator color="#fff" />
+        <ActivityIndicator testID="loading" color="#fff" />
       ) : (
         <ButtonText>{city ? 'Recarregar' : 'Buscar dados'}</ButtonText>
       )}
