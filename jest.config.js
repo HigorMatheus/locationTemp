@@ -13,11 +13,11 @@ module.exports = {
   preset: 'react-native',
   collectCoverageFrom: [
     'src/**/*.tsx',
-    'src/App.tsx',
+    '!src/App.tsx',
     '!src/__test__/**/*.tsx?',
-    // '!src/**/*.spec.tsx',
-    // '!src/**/index.ts',
+    '!src/**/index.ts',
   ],
   transformIgnorePatterns: [`node_modules/(?!(${esModules})/)`],
+
   testTimeout: 10000,
 };

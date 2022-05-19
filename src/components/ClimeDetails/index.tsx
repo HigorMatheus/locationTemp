@@ -25,7 +25,7 @@ export const ClimeDetails = ({clima}: ClimeDetailsProps) => {
             }}
           />
           <TextDetail>{clima.maxTemp}Cº</TextDetail>
-          <Temp>{clima?.temp && clima?.temp + 'Cº'}</Temp>
+          <Temp testID='tempAtual'>{clima?.temp && clima?.temp + 'Cº'}</Temp>
           <TextDetail>{clima.minTemp}Cº</TextDetail>
         </>
       ) : (

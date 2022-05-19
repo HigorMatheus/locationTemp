@@ -1,5 +1,3 @@
-import axios from 'axios';
-
-export const api = axios.create({
-  baseURL: 'https://api.openweathermap.org',
-});
+export * from './api'
+export * from './getLocationTemp'
+export * from './remoteGetLocation'
