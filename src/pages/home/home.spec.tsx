@@ -1,9 +1,9 @@
 import React from 'react';
-import {Home} from '.';
+import { Home } from '.';
 import faker from '@faker-js/faker'
 
-import {fireEvent, render, waitFor} from '@testing-library/react-native';
-import {GetLocationUserSpy,GetLocationTempSpy } from '../../mocks';
+import { fireEvent, render, waitFor } from '@testing-library/react-native';
+import { GetLocationUserSpy, GetLocationTempSpy } from '../../mocks';
 import { GetLocationTemp, GetLocationUser } from '../../types';
 
 
@@ -13,12 +13,12 @@ type SutProps = {
 };
 const makeSut = ({
   getLocationUser = new GetLocationUserSpy(),
-  getLocationTemp=new GetLocationTempSpy()
+  getLocationTemp = new GetLocationTempSpy()
 }: SutProps = {}) => {
-  const sut = render(<Home 
-    getLocationUser={getLocationUser} 
-    getLocationTemp={getLocationTemp} 
-    />);
+  const sut = render(<Home
+    getLocationUser={getLocationUser}
+    getLocationTemp={getLocationTemp}
+  />);
   return {
     sut,
   };
@@ -26,7 +26,7 @@ const makeSut = ({
 
 describe('Home', () => {
   it('render correct Home', () => {
-    const {sut} = makeSut();
+    const { sut } = makeSut();
     const text = sut.getByText(
       /precisamos de sua localização para mostrar o clima atual/i,
     );
@@ -36,7 +36,7 @@ describe('Home', () => {
     fireEvent.press(sut.getByText('Buscar dados'));
   });
   it('should to render clima', async () => {
-    const clima:GetLocationTemp.Response = {
+    const clima: GetLocationTemp.Response = {
       main: {
         temp: faker.datatype.number(),
         temp_max: faker.datatype.number(),
@@ -44,27 +44,20 @@ describe('Home', () => {
       },
       name: faker.name.jobArea(),
       weather: [
-        {description: faker.datatype.uuid(), 
-          icon: faker.datatype.string(), 
-          },
+        {
+          description: faker.datatype.uuid(),
+          icon: faker.datatype.string(),
+        },
       ],
     }
     const getLocationUser = new GetLocationUserSpy()
-    
-  
-    const {sut} = makeSut({ getLocationUser, getLocationTemp:new GetLocationTempSpy({clima})});
-
-
-
-
+    const { sut } = makeSut({ getLocationUser, getLocationTemp: new GetLocationTempSpy({ clima }) });
     await getLocationUser.loadLocation();
-    await waitFor(()=>{
-  const text = sut.getByTestId('tempAtual') 
-  
-  //queryByText(Math.round(clima.main.temp) + 'Cº');
+    await waitFor(() => {
+      const text = sut.getByTestId('tempAtual')
 
-    expect(text.children[0]).toEqual(Math.round(clima.main.temp) + 'Cº')
+      expect(text.children[0]).toEqual(Math.round(clima.main.temp) + 'Cº')
     })
-  
+
   });
 });

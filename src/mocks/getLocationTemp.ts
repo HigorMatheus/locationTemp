@@ -21,7 +21,6 @@ interface GetLocationTempSpyProps{
 }
 export class GetLocationTempSpy implements GetLocationTemp {
   clima={} as GetLocationTemp.Response
-  // currentLongitude = '';
   constructor({clima}:GetLocationTempSpyProps={}){
     this.clima=clima?clima:{}as GetLocationTemp.Response
 

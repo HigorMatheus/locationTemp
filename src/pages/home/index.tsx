@@ -2,7 +2,6 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {StatusBar} from 'react-native';
 import {Button} from '../../components/Button';
 import {ClimeDetails} from '../../components/ClimeDetails';
-import {api} from '../../services';
 import { Clime, UserLocation } from './types';
 import { GetLocationTemp, GetLocationUser } from '../../types';
 import {Container, Content, Title} from './styles';
@@ -45,9 +44,6 @@ export function Home({getLocationUser,getLocationTemp}: HomeProps) {
       }
 
     )
-      // api.get(
-      //   `/data/2.5/weather?lat=${userLocation?.latitude}&lon=${userLocation?.longitude}&units=metric&lang=pt&appid=${API_KEY}`,
-      // );
 
       const time = new Date().toLocaleTimeString();
 
